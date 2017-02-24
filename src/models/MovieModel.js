@@ -1,12 +1,12 @@
 import mongoose from 'mongoose';
 
 
-const movieSchema = new mongooseSchema({
+const movieSchema = new mongoose.Schema({
   title: {
     required: true,
     type: String
   },
-  poster_path: {
+  posterPath: {
     required: true,
     type: String
   },
@@ -14,7 +14,7 @@ const movieSchema = new mongooseSchema({
     required: true,
     type: String
   },
-  release_date: {
+  releaseDate: {
     required: true,
     type: String
   },

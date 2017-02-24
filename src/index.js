@@ -29,9 +29,10 @@ const PORT = 3001;
 
 
 // Tell the instance of express to listen to request made on Port 3001
+/* eslint no-console: 0*/
 app.listen(PORT, (err) => {
   if (err) {
     return console.log('Error!', err);
   }
-    return console.log('Listening on: http://localhost: ' + PORT);
+  return console.log('Listening on: http://localhost: ' + PORT);
 });
