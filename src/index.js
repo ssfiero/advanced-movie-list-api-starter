@@ -1,7 +1,7 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
-import movieRoutes from './routes/MovieRoutes';
+import MovieRoutes from './routes/MovieRoutes';
 
 
 // Creates a new instance of express
@@ -18,7 +18,7 @@ app.use(bodyParser.json());
 
 
 // Add MovieRoutes to the application
-app.use(movieRoutes);
+app.use(MovieRoutes);
 app.use( (err, request, response) => {
   return response.status(500).send('Something went wrong... ' + err);
 });

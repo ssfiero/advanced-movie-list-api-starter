@@ -53,7 +53,7 @@ moviesController.create = ( (request, response, next) => {
 
 // Declare a (PUT = update) (update/change a movie) route
 moviesController.update = ( (request, response, next) => {
-  MovieModel.findById(request.params._id)
+  MovieModel.findById(request.params._id).exec()
     .then(movie => {
       // Set the attributes on the model from the request.body OR
       // if we receive nothing, use what the movie is already set to.
@@ -64,7 +64,7 @@ moviesController.update = ( (request, response, next) => {
       movie.overview = request.body.overview || movie.overview;
       movie.releaseDate = request.body.releaseDate || movie.releaseDate;
 
-      return movie.save;
+      return movie.save();
     })
     .then(movie => {
       return response.json(movie);
