@@ -19,7 +19,9 @@ app.use(bodyParser.json());
 
 // Add MovieRoutes to the application
 app.use(MovieRoutes);
-app.use( (err, request, response) => {
+
+/* eslint no-unused-vars: 0*/
+app.use( (err, request, response, next) => {
   return response.status(500).send('Something went wrong... ' + err);
 });
 
